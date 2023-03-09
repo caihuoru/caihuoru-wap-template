@@ -44,12 +44,8 @@
 </template>
 <script>
 import { register } from '@/api/auth';
-import { Button, Icon, Checkbox, Toast } from 'vant';
 export default {
   components: {
-       [ Button.name ]: Button,
-       [ Icon.name ]: Icon,
-       [ Checkbox.name ]: Checkbox,
     },
     data() {
         return {
@@ -69,7 +65,7 @@ export default {
             })
             console.log(res)
             if (res.code === 0) {
-                Toast.success(res.msg)
+                this.$toast.success(res.msg)
                 setTimeout(() => {
                     this.$router.push('/login')
                 }, 1000)

@@ -1,3 +1,15 @@
+:root {
+    --van-dialog-width: 320px;
+    --van-dialog-small-screen-width: 90%;
+    --van-dialog-radius: 16px;
+    --van-dialog-background: #1c1c1e;
+    --van-dialog-header-line-height: 24px;
+    --van-dialog-header-padding-top: 26px;
+    --van-dialog-message-font-size: 14px;
+    --van-dialog-message-max-height: 60vh;
+    --van-dialog-button-height: 48px;
+    --van-dialog-round-button-height: 36px;
+}
 .van-tabbar .van-tabbar-item--active .van-tabbar-item__icon {
     background: linear-gradient(0deg,#246afd,#a669fa);
 }
@@ -16,9 +28,64 @@
     justify-content: center;
 }
 .van-tabbar {
-    background-color: #181a24;
+    background: var(--base-background);
     border-radius: 20px 20px 0 0;
 }
 .van-tabbar .van-tabbar-item--active {
     background: none;
+}
+.van-dialog {
+    top: 45%;
+    width: 320px;
+    overflow: hidden;
+    font-size: 16px;
+    background: var(--van-dialog-background);
+    border-radius: var(--van-dialog-radius);
+    backface-visibility: hidden;
+    transition: .3s;
+    transition-property: transform,opacity;
+}
+.van-dialog__content--isolated {
+    display: flex;
+    align-items: center;
+    min-height: 104px;
+}
+.van-dialog__message {
+    color: #f5f5f5;
+    flex: 1;
+    max-height: 60vh;
+    padding: 26px 24px;
+    overflow-y: auto;
+    font-size: 14px;
+    line-height: 20px;
+    white-space: pre-wrap;
+    text-align: center;
+    word-wrap: break-word;
+    -webkit-overflow-scrolling: touch;
+}
+.van-dialog__footer {
+    display: flex;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+.van-dialog__cancel, .van-dialog__confirm {
+    flex: 1;
+    height: var(--van-dialog-button-height);
+    margin: 0;
+    border: 0;
+    background: var(--van-dialog-background);
+}
+.van-button--default {
+    color: #f5f5f5;
+}
+.van-dialog__confirm, .van-dialog__confirm:active {
+    color: #1989fa;
+}
+.van-hairline--top:after {
+    border-color: #3a3a3c;
+}
+.van-hairline--left::after {
+    border-color: #3a3a3c;
 }

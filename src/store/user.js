@@ -1,6 +1,6 @@
 
 const state = {
-    avatarUrlStr: '/images/lyf.png',
+    avatarUrlStr: '/images/test.png',
     email: '',
     id: '',
     loginName: '',

@@ -65,7 +65,7 @@ const routes = [
         component: () => import('@/view/mine'),
         meta: {
           title: '我的',
-          index: 5
+          fade: true
         }
       }
     ],

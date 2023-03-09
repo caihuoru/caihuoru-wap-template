@@ -39,6 +39,9 @@ export default {
         justify-content: space-around;
         align-items: center;
         height: 60px;
+        /deep/ .van-icon{
+            font-size: 20px;
+        }
     }
 }
 </style>
