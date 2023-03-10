@@ -89,3 +89,64 @@
 .van-hairline--left::after {
     border-color: #3a3a3c;
 }
+.game-tab {
+    .van-tabs__nav--line {
+        background: none;
+        border: none;
+        margin: 0;
+        height: 34px;
+        padding: 0;
+    }
+    .van-tabs__line {
+        display: none;
+    }
+    .van-tab {
+        border: none;
+        font-size: 15px;
+        color: #bbb;
+        padding: 0 12px;
+        border-radius: 20px;
+        z-index: 2;
+    }
+    .van-tab--active {
+        color: #fff;
+        background-color: #246afd;
+        padding: 0 20px;
+    }
+}
+.sticky-tab {
+    padding: 5px;
+    background-color: rgba(0,0,0,.9);
+    border-radius: 30px;
+    margin: 20px;
+    width: calc(100% - 50px)!important;
+    .van-tabs--line .van-tabs__wrap {
+        height: 36px;
+    }
+    .van-tabs__nav--line {
+        background: none;
+        border: none;
+        margin: 0;
+        border-radius: 20px;
+        height: 36px;
+        padding: 0;
+    }
+    .van-tab {
+        border: none;
+        font-size: 15px;
+        color: #bbb;
+        padding: 0;
+        border-radius: 20px;
+        z-index: 2;
+    }
+    .van-tab--active {
+        color: #fff;
+    }
+    .van-tabs__line {
+        background-color: #282c4a;
+        bottom: 0;
+        width: 50%;
+        height: 36px;
+        border-radius: 20px;
+    }
+}

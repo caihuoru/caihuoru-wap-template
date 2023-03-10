@@ -19,7 +19,7 @@ Router.prototype.replace = function push (location, onResolve, onReject) {
 const routes = [
   {
     path: '/',
-    name: 'home',
+    // name: 'home',
     component: () => import('@/view/layout'),
     redirect: '/mine',
     children: [
@@ -28,7 +28,7 @@ const routes = [
         name: 'home',
         component: () => import('@/view/home'),
         meta: {
-          title: '我的',
+          title: '首页',
           index: 1
         }
       },
@@ -37,7 +37,7 @@ const routes = [
         name: 'message',
         component: () => import('@/view/message'),
         meta: {
-          title: '我的',
+          title: '消息',
           index: 2
         }
       },
@@ -46,7 +46,7 @@ const routes = [
         name: 'wallet',
         component: () => import('@/view/wallet'),
         meta: {
-          title: '我的',
+          title: '钱包',
           index: 3
         }
       },
@@ -55,7 +55,7 @@ const routes = [
         name: 'service',
         component: () => import('@/view/service'),
         meta: {
-          title: '我的',
+          title: '客服',
           index: 4
         }
       },
