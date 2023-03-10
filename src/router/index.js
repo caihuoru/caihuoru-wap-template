@@ -73,14 +73,6 @@ const routes = [
       index: 0,
     },
   },
-  //   path: '/contacts',
-  //   name: 'contacts',
-  //   component: () => import('@/view/contacts'),
-  //   meta: {
-  //     title: '',
-  //     fade: true
-  //   }
-  // },
 ];
 
 const router = new Router(

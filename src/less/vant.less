@@ -116,7 +116,7 @@
 }
 .sticky-tab {
     padding: 5px;
-    background-color: rgba(0,0,0,.9);
+    background-color: var(--sticky-tab-background);
     border-radius: 30px;
     margin: 20px;
     width: calc(100% - 50px)!important;
@@ -140,13 +140,42 @@
         z-index: 2;
     }
     .van-tab--active {
-        color: #fff;
+        color: var(--base-font-color);
     }
     .van-tabs__line {
-        background-color: #282c4a;
+        background-color: var(--sticky-tabs-line-background);
         bottom: 0;
         width: 50%;
         height: 36px;
         border-radius: 20px;
+    }
+}
+.msgloading-list {
+    background-color: var(--skeleton-background);
+    border-radius: 20px;
+    padding: 20px 15px;
+    margin-bottom: 20px;
+    .van-skeleton-avatar {
+        width: 50px;
+        height: 50px;
+    }
+    .van-skeleton__content {
+        padding-top: 0;
+    }
+    .van-skeleton__row, .van-skeleton__title {
+        border-radius: 20px;
+        height: 20px;
+    }
+    .van-skeleton__avatar, .van-skeleton__row, .van-skeleton__title {
+        background: var(--skeleton-background-deep);
+    }
+    
+}
+.van-popup {
+    background: transparent;
+    .jq-popup {
+        margin: 20px;
+        background: var(--base-background);
+        font-size: 18px;
     }
 }

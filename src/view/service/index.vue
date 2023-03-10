@@ -1,7 +1,19 @@
 <template>
   <div>
     <div class="content">
-      service
+      <!-- service -->
+      <div class="msgloading-list">
+        <van-skeleton title avatar :row="2" />
+      </div>
+      <div class="msgloading-list">
+        <van-skeleton title avatar :row="2" />
+      </div>
+      <div class="msgloading-list">
+        <van-skeleton title avatar :row="2" />
+      </div>
+      <div class="msgloading-list">
+        <van-skeleton title avatar :row="2" />
+      </div>
     </div>
     <Footer/>
   </div>
@@ -29,4 +41,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+.content {
+  padding: 20px;
+}
 </style>

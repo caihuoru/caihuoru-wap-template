@@ -3,7 +3,7 @@
     <div class="user">
       <div class="header">
         <div class="title">我的</div>
-        <div class="skin"><van-icon name="description" /></div>
+        <div class="skin" @click="showSkin=true"><van-icon name="description" /></div>
       </div>
       <div class="avatar">
         <img src="/images/test.png" />
@@ -75,7 +75,12 @@
       </div>
       <div class="loginout" @click="loginout"><span>切換賬號</span></div>
     </div>
-    <Footer/>
+    <van-popup class="changeSkin" v-model="showSkin" position="bottom">
+      <div class="jq-popup">
+        <div @click="changeSkin('light')">浅色</div>
+        <div @click="changeSkin('dark')">深色</div>
+      </div>
+    </van-popup>
   </div>
   
 </template>
@@ -86,33 +91,7 @@ export default {
   },
   data() {
       return {
-        navList: [
-        {
-          icon: 'like-o',
-          path: '',
-          text: '服务'
-        },
-        {
-          icon: 'star-o',
-          path: '',
-          text: '收藏'
-        },
-        {
-          icon: 'photo-o',
-          path: '',
-          text: '朋友圈'
-        },
-        {
-          icon: 'idcard',
-          path: '',
-          text: '卡包'
-        },
-        {
-          icon: 'setting-o',
-          path: '',
-          text: '设置'
-        }
-        ]
+        showSkin: false
         
       }
   },
@@ -123,6 +102,10 @@ export default {
   methods: {
     toNav(item) {
       this.$toast(`${item.text}模块暂未开放，请联系管理员`)
+    },
+    changeSkin(theme) {
+      document.body.className = theme
+      this.showSkin = !this.showSkin
     },
     loginout() {
       this.$dialog.confirm({
@@ -190,7 +173,7 @@ export default {
     }
   }
   .user-coins {
-    background-color: rgba(36,39,48,.8);
+    background-color: var(--user-menu-background);
     margin: 20px 0;
     border-radius: 20px;
     padding: 10px 10px 20px 10px;
@@ -222,7 +205,7 @@ export default {
     .menu-item {
       display: flex;
       padding: 15px;
-      background-color: rgba(36,39,48,.8);
+      background-color: var(--user-menu-background);
       flex-direction: row;
       align-items: center;
       border-radius: 20px;
@@ -261,6 +244,18 @@ export default {
   span {
     color: hsla(0,0%,100%,.3);
     font-size: 14px;
+  }
+}
+.changeSkin {
+  width: 100%;
+  .jq-popup {
+    div {
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+    }
+
   }
 }
 </style>

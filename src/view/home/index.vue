@@ -175,6 +175,7 @@ export default {
         align-items: center;
         top: 0;
         font-size: 26px;
+        color: #fff;
       }
       .simg {
         width: 100%;
