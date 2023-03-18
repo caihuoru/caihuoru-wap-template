@@ -32,7 +32,7 @@ export default {
     width: 100%;
     bottom: 0;
     right: 0;
-    z-index: 9;
+    z-index: 999;
     height: 60px;
     &-nav {
         display: flex;

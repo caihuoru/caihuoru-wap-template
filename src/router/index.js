@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 // import store from '@/store';
-
 Vue.use(Router);
 // 解决报错
 const originalPush = Router.prototype.push

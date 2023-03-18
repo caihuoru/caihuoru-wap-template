@@ -2,6 +2,7 @@ import axios from "axios"
 import { Toast } from "vant";
 import router from "@/router";
 import store from "@/store";
+import { i18n } from "@/plugins/i18n";
 const request = axios.create({
     timeout: 30000,
     baseURL: '',
@@ -67,46 +68,12 @@ request.interceptors.response.use((response) => {
     const response = err
     if (err && response) {
         console.log(response.status)
-        switch (response.status) {
-            case 400:
-                Toast.fail('错误请求');
-                break;
-            case 401:
-                // Toast.fail('未登录');
-                break;
-            case 403:
-                Toast.fail('未授权接口！');
-                break;
-            case 404:
-                Toast.fail('请求错误,未找到该资源');
-                break;
-            case 405:
-                Toast.fail('请求方法未允许');
-                break;
-            case 408:
-                Toast.fail('请求超时');
-                break;
-            case 500:
-                Toast.fail('服务器端出错');
-                break;
-            case 501:
-                Toast.fail('网络未实现');
-                break;
-            case 502:
-                Toast.fail('网络错误');
-                break;
-            case 503:
-                Toast.fail('服务不可用');
-                break;
-            case 504:
-                Toast.fail('网络超时');
-                break;
-            case 505:
-                Toast.fail('http版本不支持该请求');
-                break;
-            default:
+        // switch (response.status) {
+            if (i18n.t('errCode.' + response.status)) {
+                Toast.fail(i18n.t('errCode.' + response.status))
+            } else {
                 Toast.fail('连接错误!错误码：' + response.status);
-        }
+            }
     }
     if (err.code == 'ECONNABORTED') {
         Toast.fail('请求超时!刷新重试。')
